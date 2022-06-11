@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <!--全ページ共通のCSS-->
+        <link rel="stylesheet" type="text/css" href="css/base.css">
+        <!--このページのCSS-->
+        <link rel="stylesheet" type="text/css" href="css/selectlevel.css">
+        <!--フォントの指定-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <!--Fontawesome-->
+        <script src="https://kit.fontawesome.com/60ea5b1c05.js" crossorigin="anonymous"></script>        
+        <title>レベル選択</title>
+    </head>
+    <body>
+    <div class="header">
+        <div class="button">
+            <a href="index.html" style="text-decoration: none;">
+                <div class="back">        
+                    <i class="fa-solid fa-chevron-left"></i>
+                </div>
+            </a>
+        </div>
+
+        <div class="sectionTitle">
+          レベルをえらぶ<br>
+         <span class="subtitle">Select Level</span>
+        </div>
+    </div> 
+    <div class="levelSelectSection">
+        <div class="levelBox" onclick="switchPage(1)">
+            <span class="levelTitle">Level 1</span><br><br>
+            等差数列<br>
+            <img src="image/crown1.png" class="crown">
+        </div>
+        <div class="levelBox">
+            <span class="levelTitle">Level 2</span><br><br>
+            等差数列<br>
+            <img src="image/crown2.png" class="crown">
+        </div>
+        <div class="levelBox">
+            <span class="levelTitle">Level 3</span><br><br>
+            等差数列<br>
+            <img src="image/crown3.png" class="crown">
+        </div>
+    </div>  
+    <script>
+        function switchPage(id){
+            switch (id){
+                case 1:
+                    window.location.href="playing1.html";
+                    break;
+            }
+        }
+    </script>
+    </body>
+</html>

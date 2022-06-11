@@ -1,5 +1,4 @@
 import { useState } from 'react'
-// import logo from './logo.svg' 画像を呼び出すときに必要 src={logo}とやれば呼び出せる
 import './App.css' //cssを呼び出すときに必要
 
 
@@ -79,6 +78,10 @@ export default function App() {
     wrongMusic.pause();
   }
 
+  const doneAction=() =>{ //終了後
+    document.location.href="score.html";
+  }
+
   document.getElementById("input")?.focus();
   return (
     <>
@@ -97,6 +100,11 @@ export default function App() {
               />
         </div>
         <div id="wrongArea">{WrongState? "ERROR!":""}</div>
+      </div>
+      <div className="doneArea">
+        <div id="doneButton" onClick={doneAction}>
+          <span>DONE</span>　　<img id='iconCheck' src='src/iconCheck.png' width='15%' height='15%'></img>
+        </div>
       </div>
     </>
   );

@@ -1,0 +1,60 @@
+html{
+    width: 100%;
+    height: 100%;
+    background: #17B7AE;
+}
+body {
+    font-family: "Roboto";
+  }
+
+/*レベル選択画面・スコア表示画面のタイトル*/
+.sectionTitle{
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+}
+.subtitle{
+    font-size: 0.8rem;
+}
+
+/*戻るボタン・タイトルのヘッダー*/
+.header{
+    width: 100%;
+    display: inline-block;
+    margin-top: 0.5%;
+}
+.button{
+    width: auto;
+    display: inline-block;
+    vertical-align: top;
+}
+.sectionTitle{
+    width: auto;
+    display: inline-block;    
+    vertical-align: top;
+    padding-left: calc(41.5% - 3rem);     /*テキストを無理やり中央揃えにしようとしてますごめんなさい*/
+    padding-top: 2%;
+}
+
+/*左上：前に戻るボタン*/
+.back{
+    width: 3rem; height: 3rem;
+    text-align: center;
+    background: #128C85;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0em;
+}
+
+.back:hover{
+    opacity: 0.8;
+}
+
+/*Fontawesomeを使ったアイコンの色指定*/
+.fa-solid{
+    color: white;
+    font-size: 1.2rem;
+}

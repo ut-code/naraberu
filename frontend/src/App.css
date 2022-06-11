@@ -1,3 +1,12 @@
+body {
+  background-color: #17b7ae;
+}
+
+.inner {
+  width: 55%;
+  margin: 0 auto;
+}
+
 .App {
   text-align: center;
 }
@@ -37,6 +46,57 @@
   }
 }
 
-button {
-  font-size: calc(10px + 2vmin);
+.scoreArea{
+  padding: 1em;
+  width: 55%;
+  margin: 0 auto;
+}
+
+#putScore {
+  width: 250px;
+  background-color: #128c85;
+  text-align: center;
+  color: white;
+  margin-left: auto;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+#input {
+  width: 100%;
+  color: white;
+  background-color: black;
+  font-size: 25px;
+  border: none;
+  outline: none;
+}
+
+#seq {
+  overflow-wrap: break-word;
+  width: 100%;
+  padding: 0.5em;
+  color: white;
+  background-color: black;
+  font-size: 25px;
+  margin: 0 auto;
+}
+
+#PutoutArea {
+  width: 100%;
+  padding: 0.5em;
+  color: white;
+  background-color: black;
+  font-size: 25px;
+  display: flex;
+  margin: 0 auto;
+}
+
+#wrongArea {
+  width: 100%;
+  padding: 0.5em;
+  color: red;
+  background-color: black;
+  font-size: 25px;
+  margin: 0 auto;
 }

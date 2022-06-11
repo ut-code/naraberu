@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      let getscore = location.search;  //パラメータ文字列を取得「?score=...」
+      let score = getscore.replace("?score=","");
+      document.write(score);
+    </script>
+  </body>
+</html>

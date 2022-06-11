@@ -33,9 +33,9 @@
             等差数列<br>
             <img src="image/crown1.png" class="crown">
         </div>
-        <div class="levelBox">
+        <div class="levelBox" onclick="switchPage(2)">
             <span class="levelTitle">Level 2</span><br><br>
-            等差数列<br>
+            階差数列<br>
             <img src="image/crown2.png" class="crown">
         </div>
         <div class="levelBox">
@@ -49,6 +49,9 @@
             switch (id){
                 case 1:
                     window.location.href="playing1.html";
+                    break;
+                case 2:
+                    window.location.href="playing2.html";
                     break;
             }
         }

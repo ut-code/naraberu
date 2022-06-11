@@ -1,0 +1,22 @@
+html{
+    background: white;
+}
+.logo{
+   text-align: center;
+   margin: 15% 0 6% 0;
+}
+
+.start{
+    background: #17B7AE;
+    width: 20%;
+    color: white;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    font-size: 1.3em;
+    border-radius: 2em;
+    margin: 0 auto;
+}
+
+.start:hover{
+    opacity: 0.5;
+}

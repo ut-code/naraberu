@@ -4,11 +4,15 @@
     <meta charset="UTF-8" />
   </head>
   <body>
-    <div id="root"></div>
     <script>
-      let getscore = location.search;  //パラメータ文字列を取得「?score=...」
-      let score = getscore.replace("?score=","");
-      document.write(score);
+      let getquery = location.search;  //パラメータ文字列を取得「?score=...&level=...」
+      let querys = getquery.split("&");
+      let score = querys[0].replace("?score=","");  //scoreを抽出
+      let level = querys[1].replace("level=","");   //levelを抽出
+      document.write("score:"+score);
+      document.write("level:"+level);
+      //このscore,levelをもとに表示
+      //getElementByIdや#.idを使うことでcsvとの連携も可能(要相談)
     </script>
   </body>
 </html>

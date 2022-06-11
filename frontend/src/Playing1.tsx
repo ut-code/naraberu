@@ -79,7 +79,7 @@ export default function Playing1() {
   }
 
   const doneAction=() =>{ //終了後
-    document.location.href="score.html?score="+score;
+    document.location.href="score.html?score="+score+"&level=1";
   }
 
   document.getElementById("input")?.focus();

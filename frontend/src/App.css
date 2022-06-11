@@ -100,3 +100,24 @@ body {
   font-size: 25px;
   margin: 0 auto;
 }
+
+.doneArea{
+  padding: 1em;
+  width: 55%;
+  margin: 0 auto;
+}
+
+#doneButton{
+  width: 200px;
+  background-color: #fd467b;
+  text-align: center;
+  color: white;
+  margin-left: auto;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+#iconCheck{
+  vertical-align: middle;
+}

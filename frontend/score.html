@@ -37,7 +37,7 @@
       <div class="footArea">
         <div class="goNext">
           <div id="toNext" onclick="gotoNext()"><img src="image/arrow.png" width="60%" height="60%"></div>
-          <span class="labelNext">次へ</span>
+          <span id="textNext" class="labelNext">次へ</span>
         </div>
         <div class="goNext">
           <div id="retry" onclick="goretry()"><img src="image/repeat.png" width="60%" height="60%"></div>
@@ -59,8 +59,10 @@
       let levelLabel = document.getElementById("levelLabel");
       levelLabel.textContent = levelTag[level-1];
       let NextButton = document.getElementById('toNext');
+      let NextText = document.getElementById('textNext');
       if ( level == 3 ){
         NextButton.remove();
+        NextText.remove();
       }
 
       function gotoNext(){

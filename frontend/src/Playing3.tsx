@@ -35,24 +35,28 @@ export default function Playing3() {
   const [NowTerm, setNowTerm] = useState(InitTerm);  //最新の項の値(初期値は初項)
   const [DifTerm, setDifTerm] = useState(makeNewSequence(FirstTerm,SecondTerm,Tolerance,InitialNum)[1]);  //最新の1つ前の値
   const [WrongState, setWrongState] = useState(false);  //間違えた状態(エラーメッセージを表示するかどうか)
+  const [life, setLife] = useState(3);  //残りライフ
 
   const FuncSubmit = () =>{ //提出を受けて対応する反応を返す
-    const copiedSequence = TheSequence;
-    let storeNew = 0;
-    CheckAns() ?
-      (
-        storeNew = NowTerm,
-        setNowTerm(CalTerms()),
-        setTermNum(TermNum+1),
-        setDifTerm(storeNew),
-        setTheSequence(copiedSequence+". "+NewAns),
-        setScore(score+giveReward()),
-        setWrongState(false)
-      )
-      :(
-        setWrongState(true)
-      );
+    CheckAns() ? correct() : wrong();
       setNewAns("");
+  };
+  
+  const correct = () =>{
+    let storeNew = 0;
+    const copiedSequence = TheSequence;
+    storeNew = NowTerm;
+    setNowTerm(CalTerms());
+    setTermNum(TermNum+1);
+    setDifTerm(storeNew),
+    setTheSequence(copiedSequence+". "+NewAns);
+    setScore(score+giveReward());
+    setWrongState(false);
+  };
+  
+  const wrong = () =>{
+    setWrongState(true);
+    declineLife();
   };
 
   const CheckAns = () =>{ //回答が正しいか吟味する
@@ -64,7 +68,7 @@ export default function Playing3() {
   };
   
   let get_text = document.getElementById("input");  //テキストボックスのidを取得
-  get_text?.addEventListener('keypress', enterEvent);   //キーイベントを設定
+  get_text?.addEventListener('keydown', enterEvent, {once: true});   //キーイベントを設定
   function enterEvent(e){
     if (e.keyCode === 13){  //テキストボックス選択中にEnterキーを押したとき
       FuncSubmit();
@@ -79,6 +83,14 @@ export default function Playing3() {
     document.location.href="score.html?score="+score+"&level=3";
   }
 
+  const declineLife=() =>{ //不正解時にライフを減らす処理
+    if (life == 0){
+      document.location.href="score.html?score="+score+"&level=1";
+    } else {
+      setLife(life-1);
+    }
+  }
+
   document.getElementById("input")?.focus();
   return (
     <>
@@ -87,6 +99,10 @@ export default function Playing3() {
         <div id="LevelTitle">三項間漸化式</div>
       </div>
       <div className="scoreArea">
+        <div id="heartTag">
+          <img id="heartImg" src="image/heart.png" width="12%"></img>&nbsp;
+          ×{life}
+        </div>
         <div id="scoreTag">
           <span id="scoreTxt">SCORE</span>　　　　　
           <span id="putScore">{score}</span>

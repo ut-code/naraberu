@@ -35,8 +35,14 @@
         <div id="theScore"></div>
       </div>
       <div class="footArea">
-        <div class="goNext" id="toNext" onclick="toNext()">い</div>
-        <div class="goNext" id="retry" onclick="retry()">あ</div>
+        <div class="goNext">
+          <div id="toNext" onclick="gotoNext()"><img src="image/arrow.png" width="60%" height="60%"></div>
+          <span class="labelNext">次へ</span>
+        </div>
+        <div class="goNext">
+          <div id="retry" onclick="goretry()"><img src="image/repeat.png" width="60%" height="60%"></div>
+          <span class="labelNext">もう一度</span>
+        </div>
       </div>
     </div>
     <script>
@@ -52,6 +58,18 @@
       scoreValue.textContent = score;
       let levelLabel = document.getElementById("levelLabel");
       levelLabel.textContent = levelTag[level-1];
+      let NextButton = document.getElementById('toNext');
+      if ( level == 3 ){
+        NextButton.remove();
+      }
+
+      function gotoNext(){
+        let nextlevel = Number(level) + 1;
+        document.location.href = "playing"+nextlevel+".html";
+      }
+      function goretry(){
+        document.location.href = "playing"+level+".html";
+      }
       //このscore,levelをもとに表示
       //getElementByIdや#.idを使うことでcsvとの連携も可能(要相談)
       

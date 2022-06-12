@@ -80,7 +80,7 @@ export default function Playing2() {
   return (
     <>
       <div className="titleArea">
-        <div id="putLevel">Level 3</div>
+        <div id="putLevel">Level 2</div>
         <div id="LevelTitle">階差数列</div>
       </div>
       <div className="scoreArea">

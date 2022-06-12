@@ -7,7 +7,7 @@
 }
 
 .levelArea {
-    padding: 1em;
+    padding: 2em;
     width: 55%;
     margin: 0 auto;
 }
@@ -49,9 +49,39 @@
 }
 
 .footArea {
-    padding: 1em;
+    padding: 2em;
 }
 
 .goNext{
     float: right;
+    text-align: center;
+    margin: 0 0 2em 0;
+}
+
+#toNext{
+    width: 5rem; height: 5rem;
+    text-align: center;
+    background: #fd467b;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 0 1em 0.2em 1em;
+}
+
+#retry{
+    width: 5rem; height: 5rem;
+    text-align: center;
+    background: #17b7ae;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1em 0.2em 1em;
+}
+
+.labelNext{
+    font-size: 15px;
+    font-weight: bold;
 }

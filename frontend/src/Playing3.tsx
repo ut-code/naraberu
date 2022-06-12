@@ -76,7 +76,7 @@ export default function Playing3() {
   }
 
   const doneAction=() =>{ //終了後
-    document.location.href="score.html?score="+score+"&level=2";
+    document.location.href="score.html?score="+score+"&level=3";
   }
 
   document.getElementById("input")?.focus();

@@ -82,7 +82,7 @@ export default function Playing2() {
 
   const declineLife=() =>{ //不正解時にライフを減らす処理
     if (life == 0){
-      document.location.href="score.html?score="+score+"&level=1";
+      document.location.href="score.html?score="+score+"&level=2";
     } else {
       setLife(life-1);
     }

@@ -35,13 +35,16 @@
         <div id="theScore"></div>
       </div>
       <div class="footArea">
-        <div class="goNext">
-          <div id="toNext" onclick="gotoNext()"><img src="image/arrow.png" width="60%" height="60%"></div>
-          <span id="textNext" class="labelNext">次へ</span>
-        </div>
-        <div class="goNext">
-          <div id="retry" onclick="goretry()"><img src="image/repeat.png" width="60%" height="60%"></div>
-          <span class="labelNext">もう一度</span>
+        <div id="word"></div>
+        <div class="buttonBox">
+          <div class="goNext">
+            <div id="retry" onclick="goretry()"><img src="image/repeat.png" width="60%" height="60%"></div>
+            <span class="labelNext">もう一度</span>
+          </div>
+          <div class="goNext">
+            <div id="toNext" onclick="gotoNext()"><img src="image/arrow.png" width="60%" height="60%"></div>
+            <span id="textNext" class="labelNext">次へ</span>
+          </div>
         </div>
       </div>
     </div>
@@ -72,25 +75,17 @@
       function goretry(){
         document.location.href = "playing"+level+".html";
       }
-      //このscore,levelをもとに表示
-      //getElementByIdや#.idを使うことでcsvとの連携も可能(要相談)
       
-      /*function toTweet(){
-        let client = new Twitter({
-          consumer_key: '0qhnglWeBxPnr2mm17futm7GT',
-          consumer_secret: '5qzxgTVAVzfkvrF2wCnbtkHqsEFNoeExl9GchU5V0jQAu0rcBp',
-          access_token_key: '1502139978221903872-z7K1Aj4525HVJYTxleJ1cseku8a7RI',
-          access_token_secret: 'efpuGPZ5Kym8Qj8DJ9mdRLsTtFLCxRtVfVdVfP4AkYeQl'
-        });
-        let params = {screen_name: 'nodejs'};
-        client.post('statuses/update', {status: 'ツイートテストby naraberu'}, function(error, tweet, response){
-          if (!error) {
-              console.log(tweet);
-          } else {
-              console.log('error');
-          }
-        });
-      } tweetを試みた。無理っぽい。*/ 
+      let meigenList = [
+        '万物の根源は数なり（ピタゴラス）',
+        '数学とは生命の燃焼です（岡潔）',
+        '数学の本体は調和の精神である（ポアンカレ）',
+        '私は言葉を話す前から計算をしていた（ガウス）',
+        '我々は知らねばならない、我々は知るであろう（ヒルベルト）'
+      ];
+      let dice = Math.floor( Math.random() * 5 );
+      let getWord = document.getElementById("word");
+      getWord.textContent = meigenList[dice];
     </script>
   </body>
 </html>

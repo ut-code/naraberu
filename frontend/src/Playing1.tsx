@@ -16,7 +16,6 @@ function makeNewSequence(first, tolerance, init){ //初めの文字列を生成
   InitTerm = savenum;
   return putout;
 }
-let wrongMusic = new Audio("src/button18.mp3");
 
 export default function Playing1() {
   const InitialNum = 3; //最初何項表示させるか
@@ -39,12 +38,9 @@ export default function Playing1() {
         setTermNum(TermNum+1),
         setTheSequence(copiedSequence+". "+NewAns),
         setScore(score+giveReward()),
-        setWrongState(false),
-        stopWrong()
-      )
-      :(
-        setWrongState(true),
-        ringWrong()
+        setWrongState(false)
+      ):(
+        setWrongState(true)
       );
       setNewAns("");
   };
@@ -66,16 +62,7 @@ export default function Playing1() {
   }
 
   const giveReward = () =>{ //SCOREを決定
-    return 1;
-  }
-
-  const ringWrong =() =>{ //不正解音を流す
-    wrongMusic.currentTime = 0;
-    wrongMusic.play();
-  }
-
-  const stopWrong=() =>{  //不正解音を消す
-    wrongMusic.pause();
+    return Math.floor(TermNum/4);
   }
 
   const doneAction=() =>{ //終了後
@@ -86,11 +73,14 @@ export default function Playing1() {
   return (
     <>
       <div className="titleArea">
-        <div id="putLevel">LEVEL1</div>
+        <div id="putLevel">Level 1</div>
         <div id="LevelTitle">等差数列</div>
       </div>
       <div className="scoreArea">
-        <div id="putScore">SCORE　 {score}</div>
+        <div id="scoreTag">
+          <span id="scoreTxt">SCORE</span>　　　　　
+          <span id="putScore">{score}</span>
+        </div>
       </div>
       <div className="inner">
         <div id="seq">{TheSequence}</div>
@@ -107,7 +97,7 @@ export default function Playing1() {
       </div>
       <div className="doneArea">
         <div id="doneButton" onClick={doneAction}>
-          <span>DONE</span>　　<img id='iconCheck' src='image/iconCheck.png' width='15%' height='15%'></img>
+          <span>DONE</span>　　　<img id='iconCheck' src='image/iconCheck.png' width='10%' height='10%'></img>
         </div>
       </div>
     </>

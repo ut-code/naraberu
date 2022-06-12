@@ -38,22 +38,15 @@
             階差数列<br>
             <img src="image/crown2.png" class="crown">
         </div>
-        <div class="levelBox">
+        <div class="levelBox" onclick="switchPage(3)">
             <span class="levelTitle">Level 3</span><br><br>
-            等差数列<br>
+            三項間漸化式<br>
             <img src="image/crown3.png" class="crown">
         </div>
     </div>  
     <script>
         function switchPage(id){
-            switch (id){
-                case 1:
-                    window.location.href="playing1.html";
-                    break;
-                case 2:
-                    window.location.href="playing2.html";
-                    break;
-            }
+            window.location.href="playing"+id+".html";
         }
     </script>
     </body>

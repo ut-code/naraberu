@@ -34,22 +34,26 @@ export default function Playing2() {
   const [NowTerm, setNowTerm] = useState(InitTerm);  //最新の項の値(初期値は初項)
   const [DifTerm, setDifTerm] = useState(makeNewSequence(FirstTerm,FirstDifTerm,Tolerance,InitialNum)[1]);  //階差数列の値(初期値は初項)
   const [WrongState, setWrongState] = useState(false);  //間違えた状態(エラーメッセージを表示するかどうか)
+  const [life, setLife] = useState(3);  //残りライフ
 
   const FuncSubmit = () =>{ //提出を受けて対応する反応を返す
-    const copiedSequence = TheSequence;
-    CheckAns() ?
-      (
-        setNowTerm(CalTerms()),
-        setTermNum(TermNum+1),
-        setDifTerm(DifTerm+Tolerance),
-        setTheSequence(copiedSequence+". "+NewAns),
-        setScore(score+giveReward()),
-        setWrongState(false)
-      )
-      :(
-        setWrongState(true)
-      );
+    CheckAns() ? correct() : wrong();
       setNewAns("");
+  };
+  
+  const correct = () =>{
+    const copiedSequence = TheSequence;
+    setNowTerm(CalTerms());
+    setTermNum(TermNum+1);
+    setDifTerm(DifTerm+Tolerance),
+    setTheSequence(copiedSequence+". "+NewAns);
+    setScore(score+giveReward());
+    setWrongState(false);
+  };
+  
+  const wrong = () =>{
+    setWrongState(true);
+    declineLife();
   };
 
   const CheckAns = () =>{ //回答が正しいか吟味する
@@ -61,7 +65,7 @@ export default function Playing2() {
   };
   
   let get_text = document.getElementById("input");  //テキストボックスのidを取得
-  get_text?.addEventListener('keypress', enterEvent);   //キーイベントを設定
+  get_text?.addEventListener('keydown', enterEvent, {once: true});   //キーイベントを設定
   function enterEvent(e){
     if (e.keyCode === 13){  //テキストボックス選択中にEnterキーを押したとき
       FuncSubmit();
@@ -76,6 +80,14 @@ export default function Playing2() {
     document.location.href="score.html?score="+score+"&level=2";
   }
 
+  const declineLife=() =>{ //不正解時にライフを減らす処理
+    if (life == 0){
+      document.location.href="score.html?score="+score+"&level=1";
+    } else {
+      setLife(life-1);
+    }
+  }
+
   document.getElementById("input")?.focus();
   return (
     <>
@@ -84,6 +96,10 @@ export default function Playing2() {
         <div id="LevelTitle">階差数列</div>
       </div>
       <div className="scoreArea">
+        <div id="heartTag">
+          <img id="heartImg" src="image/heart.png" width="12%"></img>&nbsp;
+          ×{life}
+        </div>
         <div id="scoreTag">
           <span id="scoreTxt">SCORE</span>　　　　　
           <span id="putScore">{score}</span>

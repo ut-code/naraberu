@@ -62,7 +62,7 @@ export default function Playing1() {
   }
 
   const giveReward = () =>{ //SCOREを決定
-    return Math.floor(TermNum/4);
+    return Math.floor(TermNum/2);
   }
 
   const doneAction=() =>{ //終了後

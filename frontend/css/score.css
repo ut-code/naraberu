@@ -1,0 +1,57 @@
+.scoreSection{
+    width: 80%;
+    background-color: white;
+    border-radius: 25px;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+.levelArea {
+    padding: 1em;
+    width: 55%;
+    margin: 0 auto;
+}
+  
+#theLevel {
+    width: 150px;
+    background-color: #ffd32c;
+    text-align: center;
+    padding: 5px;
+    color: white;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+#levelLabel {
+    width: 150px;
+    text-align: center;
+    padding: 5px;
+    margin: 0 auto;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.scoreArea {
+    padding: 1em;
+    width: 55%;
+    margin: 0 auto;
+}
+  
+#theScore {
+    width: 150px;
+    text-align: center;
+    padding: 5px;
+    margin: 0 auto;
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.footArea {
+    padding: 1em;
+}
+
+.goNext{
+    float: right;
+}

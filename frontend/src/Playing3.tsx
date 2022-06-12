@@ -3,7 +3,7 @@ import './App.css' //cssを呼び出すときに必要
 
 
 let InitTerm = 0;
-const subtol = Math.floor( Math.random() * (3 - 1) ) + 1;
+const subtol = Math.floor( Math.random() * 3);
 const subfir = Math.floor( Math.random() * (5 - 1) ) + 1;
 const subfir2 = Math.floor( Math.random() * (5 - 1) ) + 1;
 function makeNewSequence(first, second, tolerance, init){ //初めの文字列を生成

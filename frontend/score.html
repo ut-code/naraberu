@@ -2,15 +2,56 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!--全ページ共通のCSS-->
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <!--このページのCSS-->
+    <link rel="stylesheet" type="text/css" href="css/selectlevel.css">
+    <link rel="stylesheet" type="text/css" href="css/score.css">
+    <!--Fontawesome-->
+    <script src="https://kit.fontawesome.com/60ea5b1c05.js" crossorigin="anonymous"></script>        
+    <title>スコア表示</title>
   </head>
   <body>
+    <div class="header">
+      <div class="button">
+          <a href="index.html" style="text-decoration: none;">
+              <div class="back">        
+                  <i class="fa-solid fa-chevron-left"></i>
+              </div>
+          </a>
+      </div>
+
+      <div class="sectionTitle">
+        あなたのスコア<br>
+       <span class="subtitle">Your Score</span>
+      </div>
+    </div> 
+    <div class="scoreSection">
+      <div class="levelArea">
+        <div id="theLevel"></div>
+        <div id="levelLabel"></div>
+      </div>
+      <div class="scoreArea">
+        <div id="theScore"></div>
+      </div>
+      <div class="footArea">
+        <div class="goNext" id="toNext" onclick="toNext()">い</div>
+        <div class="goNext" id="retry" onclick="retry()">あ</div>
+      </div>
+    </div>
     <script>
       let getquery = location.search;  //パラメータ文字列を取得「?score=...&level=...」
       let querys = getquery.split("&");
       let score = querys[0].replace("?score=","");  //scoreを抽出
       let level = querys[1].replace("level=","");   //levelを抽出
-      document.write("score:"+score);
-      document.write("level:"+level);
+      let levelTag = ['等差数列','階差数列','三項間漸化式'];
+
+      let levelValue = document.getElementById("theLevel");
+      levelValue.textContent = "Level "+level;
+      let scoreValue = document.getElementById("theScore");
+      scoreValue.textContent = score;
+      let levelLabel = document.getElementById("levelLabel");
+      levelLabel.textContent = levelTag[level-1];
       //このscore,levelをもとに表示
       //getElementByIdや#.idを使うことでcsvとの連携も可能(要相談)
       

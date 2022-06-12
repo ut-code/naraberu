@@ -1,6 +1,7 @@
 .scoreSection{
     width: 80%;
     background-color: white;
+    border: solid #ffd32c 30px;
     border-radius: 25px;
     margin: 40px auto;
     overflow: hidden;
@@ -50,12 +51,32 @@
 
 .footArea {
     padding: 2em;
+    display: flex;
+    justify-content: space-between;
 }
-
+.buttonBox{
+    display: inline-block;
+}
 .goNext{
-    float: right;
+    display: inline-block;
     text-align: center;
     margin: 0 0 2em 0;
+}
+.goNext:hover{
+    opacity: 0.5;
+}
+
+/*名言*/
+#word{
+    background: #17b7ae;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    font-size: 1.2rem;
+    padding: 1.3rem ;
+    display: inline-block;
+    height: 2rem;
+    vertical-align: middle;
 }
 
 #toNext{
@@ -85,3 +106,4 @@
     font-size: 15px;
     font-weight: bold;
 }
+

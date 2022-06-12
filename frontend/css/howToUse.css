@@ -1,0 +1,23 @@
+.imageSection{
+    background: white;
+    border-radius: 20px;
+    width: 80%;
+    text-align: center;
+    padding: 3%;
+    margin: 2% auto;
+}
+.start{
+    background: #FD467B;
+    width: 20%;
+    color: white;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 2em;
+    margin: 0 auto;
+}
+
+.start:hover{
+    opacity: 0.5;
+}

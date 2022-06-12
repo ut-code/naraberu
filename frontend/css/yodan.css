@@ -1,0 +1,17 @@
+#explanation {
+    color: white;
+    padding: 2em;
+    width: 55%;
+    margin: 0 auto;
+    margin-top: 3em;
+    font-size: 20px;
+}
+.expHead {
+    background-color: #128c85;
+    font-size: 30px;
+    padding: 7px;
+    margin: 0 auto;
+}
+.expMain {
+    padding: 1em 1em 2em 1em;
+}

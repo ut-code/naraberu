@@ -4,10 +4,33 @@
     <meta charset="UTF-8" />
     <!--フォントの指定-->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!--余談のスタイル-->
+    <link rel="stylesheet" type="text/css" href="css/yodan.css">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <title>レベル1</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/playpage1.tsx"></script>
+    <div id="explanation">
+      <span class="expHead">解説</span>
+      <div class="expMain">
+        等差数列は、隣り合う項の差が一定である数列です。例えば、
+        \[ 1,3,5,7,...\]
+        という数列は隣り合う項の差が一定なので等差数列となります。<br>
+        この隣り合う項の差のことを「公差」といって、次の項は前の項に公差を足した数になります。<br>
+        1つ目の項を「初項」といい、初項を\( a\)、公差を\( d\)とすると\( n\)番目の項\( a_n\)は、
+        \[ a_2=a+d,\ a_3=a_2+d=a+2d,...\]
+        となるので
+        \[ a_n=a+(n-1)d\]
+        と表されます。
+      </div>
+      <span class="expHead">余談</span>
+      <div class="expMain">
+        何かネタください。
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="script/accordion.js"></script>
   </body>
 </html>

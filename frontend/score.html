@@ -13,6 +13,23 @@
       document.write("level:"+level);
       //このscore,levelをもとに表示
       //getElementByIdや#.idを使うことでcsvとの連携も可能(要相談)
+      
+      /*function toTweet(){
+        let client = new Twitter({
+          consumer_key: '0qhnglWeBxPnr2mm17futm7GT',
+          consumer_secret: '5qzxgTVAVzfkvrF2wCnbtkHqsEFNoeExl9GchU5V0jQAu0rcBp',
+          access_token_key: '1502139978221903872-z7K1Aj4525HVJYTxleJ1cseku8a7RI',
+          access_token_secret: 'efpuGPZ5Kym8Qj8DJ9mdRLsTtFLCxRtVfVdVfP4AkYeQl'
+        });
+        let params = {screen_name: 'nodejs'};
+        client.post('statuses/update', {status: 'ツイートテストby naraberu'}, function(error, tweet, response){
+          if (!error) {
+              console.log(tweet);
+          } else {
+              console.log('error');
+          }
+        });
+      } tweetを試みた。無理っぽい。*/ 
     </script>
   </body>
 </html>

@@ -12,6 +12,23 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/playpage3.tsx"></script>
+    <div id="explanation">
+      <span class="expHead">解説</span>
+      <div class="expMain">
+        三項間漸化式とは、前の2つの項によって次の項が定まるような漸化式のことです。例えば、
+        $$1,1,2,3,5,8,13,...$$
+        というような有名な「フィボナッチ数列」は前の2つの項の和が次の項となるので、\(n\)番目の項を\(F_n\)とすると
+        $$F_{n+2}=F_{n+1}+F_n$$
+        という三項間漸化式によって表すことができます。<br>
+        Level 3では、\( n\) 番目の項を\( a_n\)とすると
+        $$a_{n+2}=a_{n+1}+a_n+d$$
+        と表されるような数列を出題しています。\( d\)などはランダムに選んでいるので運が良ければフィボナッチ数列に出会えるかもしれません。
+      </div>
+      <span class="expHead">余談</span>
+      <div class="expMain">
+        何かネタください。
+      </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="script/accordion.js"></script>
   </body>
